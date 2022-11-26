@@ -1,45 +1,47 @@
 <app-navbar></app-navbar>
 <div class="container mb-5">
-    <div class="row align-items-center">
-      <div class="col-8">
-        <i class="fa-light fa-lightbulb-on"></i>
-        <p class="text-uppercase sabeer">
-We build Together !           </p>
-  
-        <button
-          type="button"
-          class="ms-5 btn btn-secondary col-4"
-          [routerLink]="['/myproject']"
-        >
-          <img src="../../assets/icons/idea.svg" /> see all project
-        </button>
-  
-        <button
-          type="button"
-          class="ms-2 btn btn-primary col-4 mx-aut"
-          [routerLink]="['/allproject']"
-        >
-          <img src="../../assets/icons/hand.svg" />
-          Soutenir un projet
-        </button>
-      </div>
-      <div class="col-4">
-        <img src="../../assets/cover-home.png" width="600" />
-      </div>
+  <div class="row align-items-center">
+    <div class="col-8">
+      <i class="fa-light fa-lightbulb-on"></i>
+      <p class="text-uppercase sabeer">We build Together !</p>
+
+      <button
+        type="button"
+        class="ms-5 btn btn-secondary col-4"
+        [routerLink]="['/projects']"
+      >
+        <img src="../../assets/icons/idea.svg" /> see all project
+      </button>
+
+      <button
+        type="button"
+        class="ms-2 btn btn-primary col-4 mx-aut"
+        [routerLink]="['/projects']"
+      >
+        <img src="../../assets/icons/hand.svg" />
+        Make a vote
+      </button>
     </div>
-    <div class="col-1"></div>
+    <div class="col-4">
+      <img src="../../assets/cover-home.png" width="400px" />
+    </div>
   </div>
-  <div style="height: 10px"></div>
-  
-  <div id="" >
-<div style="background-color: #D1A662;">
-  <div class="container">
-  <h3 class="text-uppercase text-center title3 lh-base p-5 mt-5">
-    We-vote is a  <b>Tunisian platform </b> dedicated to <b>implicate people </b> in decision making using solutions based on <b> smart contracts and blockchain network </b>,to ensure security and transparency
-  </h3>
+  <div class="col-1"></div>
 </div>
-</div>
-<!--   
+<div style="height: 10px"></div>
+
+<div id="">
+  <div style="background-color: #d1a662">
+    <div class="container">
+      <h3 class="text-uppercase text-center title3 lh-base p-5 mt-5">
+        We-vote is a <b>Tunisian platform </b> dedicated to
+        <b>implicate people </b> in decision making using solutions based on
+        <b> smart contracts and blockchain network </b>,to ensure security and
+        transparency
+      </h3>
+    </div>
+  </div>
+  <!--   
     <div class="row">
       <div class="col-4">
         <img src="../../assets/e-Dinar Funding.png" class="img-fluid" alt="..." />
@@ -61,25 +63,29 @@ We build Together !           </p>
   <div style="height: 70px"></div>
    -->
   <!--  stat  -->
-  
+
   <div class="container">
     <!-- <h3 class="text-uppercase text-center title2">
       votre <b>rêve</b> est LE nôtre, votre don est une <b>nouvelle sourit </b>
     </h3> -->
     <div class="mt-3"></div>
-  
+
     <div class="mt-5"></div>
     <div class="mt-3"></div>
-  
+
     <div class="row">
       <div class="col-4">
         <div class="card mb-4" style="max-width: 540px; border: none">
           <div class="row g-0">
             <div class="col-md-3">
-              <img width="80px" src="../../assets/homeicons/project.svg" alt="" />
+              <img
+                width="80px"
+                src="../../assets/homeicons/project.svg"
+                alt=""
+              />
             </div>
             <div class="col-md-8">
-              <h4 class="ti"> +100 </h4>
+              <h4 class="ti">+100</h4>
               <h3 class="subti text-uppercase">projets</h3>
             </div>
           </div>
@@ -89,11 +95,11 @@ We build Together !           </p>
         <div class="card mb-4" style="max-width: 540px; border: none">
           <div class="row g-0">
             <div class="col-md-3">
-              <img width="80px" src="../../assets/homeicons/love.svg" alt="" />
+              <img width="80px" src="../../assets/vote.png" alt="" />
             </div>
             <div class="col-md-8">
-              <h4 class="ti"> sharedDataInfo.sumContributions TND</h4>
-              <h3 class="subti">Somme collectée</h3>
+              <h4 class="ti">+200000</h4>
+              <h3 class="subti">Votes</h3>
             </div>
           </div>
         </div>
@@ -105,8 +111,8 @@ We build Together !           </p>
               <img width="80px" src="../../assets/homeicons/money.svg" alt="" />
             </div>
             <div class="col-md-8">
-              <h4 class="ti">sharedDataInfo.nbContibutions</h4>
-              <h3 class="subti">Bailleurs de fond</h3>
+              <h4 class="ti">+5</h4>
+              <h3 class="subti">Projects finished</h3>
             </div>
           </div>
         </div>
@@ -116,8 +122,6 @@ We build Together !           </p>
   <div style="height: 70px"></div>
   <!--feed back-->
   <div class="container">
-    
-    
     <div class="row">
       <div class="col-6">
         <div
@@ -125,12 +129,13 @@ We build Together !           </p>
           style="border: none; min-height: 280px"
         >
           <h5 class="card-title blue text-center fs-1">Vision</h5>
-  
+
           <div class="card-body">
             <p class="card-text ms-5">
-              WE-VOTE is platform participatery democracy apporch based on e-voting and e-govermance.
-              <br>
-              our goal is to establish trust between  citizens gaverment    
+              WE-VOTE is platform participatery democracy apporch based on
+              e-voting and e-govermance.
+              <br />
+              our goal is to establish trust between citizens gaverment
             </p>
           </div>
         </div>
@@ -140,21 +145,148 @@ We build Together !           </p>
           class="card shadow p-3 mb-5 bg-body rounded"
           style="border: none; min-height: 280px"
         >
-          <h5 class="card-title blue text-center fs-1">Vision</h5>
-  
+          <h5 class="card-title blue text-center fs-1">how ?</h5>
+
           <div class="card-body">
             <p class="card-text ms-5">
-              WE-VOTE is platform participatery democracy apporch based on e-voting and e-govermance.
-              <br>
-              our goal is to establish trust between  citizens gaverment    
+              People use a unique identifier to log into the portal and consult
+              government-proposed projects. He casts a yes or no vote and
+              comments with his viewpoint. After that, if a majority of people
+              approve the initiative, the government must carry it out and make
+              sure that the public is informed of its progress.
             </p>
           </div>
         </div>
       </div>
-      
-   
-   
     </div>
   </div>
-  <app-test></app-test>
-  <!-- <app-footer></app-footer> -->
+
+  <div class="container">
+    <span class="border-top border-5 fs-1 border-primary">Porposed</span>
+
+    <div class="card-group">
+      <div class="card">
+        <img src="../../assets/ecole.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>A well-known quote, contained in a blockquote element.</p>
+              <footer class="blockquote-footer">
+                Nombre de votes totales : <cite title="Source Title">25 </cite>
+              </footer>
+            </blockquote>
+          </div>
+
+          <div class="text-end">
+            <div class="card-body">
+              <a href="#" class="btn btn-primary">see More ➜ </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../../assets/5.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>A well-known quote, contained in a blockquote element.</p>
+              <footer class="blockquote-footer">
+                Nombre de votes totales : <cite title="Source Title">25 </cite>
+              </footer>
+            </blockquote>
+          </div>
+
+          <div class="text-end">
+            <div class="card-body">
+              <a href="#" class="btn btn-primary">see More ➜ </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../../assets/4.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>A well-known quote, contained in a blockquote element.</p>
+              <footer class="blockquote-footer">
+                Nombre de votes totales : <cite title="Source Title">25 </cite>
+              </footer>
+            </blockquote>
+          </div>
+
+          <div class="text-end">
+            <div class="card-body">
+              <a href="#" class="btn btn-primary">see More ➜ </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 ">
+  <span class="border-top border-5 fs-1 border-primary ">Finished Projects</span>
+
+  <div class="card-group">
+    <div class="card">
+      <img src="../../assets/3.jpg" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>A well-known quote, contained in a blockquote element.</p>
+            <footer class="blockquote-footer">
+              Nombre de votes totales : <cite title="Source Title">25 </cite>
+            </footer>
+          </blockquote>
+        </div>
+
+        <div class="text-end">
+          <div class="card-body">
+            <a href="#" class="btn btn-primary">see More ➜ </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="../../assets/2.jpg" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This card has supporting text below as a natural lead-in to additional
+          content.
+        </p>
+    
+      </div>
+      <div class="text-end">
+        <div class="card-body">
+          <a href="#" class="btn btn-primary">see More ➜ </a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="../../assets/1.jpg" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in
+          to additional content. This card has even longer content than the
+          first to show that equal height action.
+        </p>
+
+      </div>
+      <div class="text-end">
+        <div class="card-body">
+          <a href="#" class="btn btn-primary">see More➜ </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

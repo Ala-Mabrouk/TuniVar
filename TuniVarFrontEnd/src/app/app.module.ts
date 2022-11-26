@@ -9,6 +9,10 @@ import { TestComponent } from './test/test.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectComponent } from './project/project.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LogInSignUpComponent } from './log-in-sign-up/log-in-sign-up.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FinishedProjectsComponent } from './finished-projects/finished-projects.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -18,12 +22,17 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     TestComponent,
     ProjectsComponent,
-    ProjectComponent
+    ProjectComponent,
+    LogInSignUpComponent,
+    FinishedProjectsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
 
   ],
   providers: [],
