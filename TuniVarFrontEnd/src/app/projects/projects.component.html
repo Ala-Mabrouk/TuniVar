@@ -15,7 +15,7 @@
     <div class="col-3">
       <div class="d-grid gap-2 col-6 mx-auto">
         <button class="btn btn-primary" type="button">
-          <img src="../../assets/icons/chercher.svg" /> Chercher
+          <img src="../../assets/icons/chercher.svg" /> search
         </button>
       </div>
     </div>
@@ -24,33 +24,26 @@
   <div class="card mt-5">
     <div class="row">
       <div class="col-4">
-        <img src="../../assets/ecole.jpg" class="card-img-top p-3" />
+        <img [src]=project.projectMedia  class="card-img-top p-3" />
       </div>
       <div class="col-5">
-        <!-- <div>
-            <ngx-qrcode
-              [elementType]="elementType"
-              [errorCorrectionLevel]="correctionLevel"
-              [value]="value"
-              cssClass="bshadow"
-            ></ngx-qrcode>
-          </div> -->
+     
         <div class="card-body">
-          <h5 class="card-title">project.projectShortName</h5>
-          <p class="card-text">{{project.projectName}}</p>
+          <h5 class="card-title">{{project.projectName}}</h5>
+         
 
           <div class="list-inline">
-            <img src="../../assets/icons/donate.svg" class="list-inline-item" />
+            <img class="list-inline-item" />
             <p class="card-text list-inline-item">
-              <b> project.nbContributions </b> Bailleurs de fond
+              {{project.projectDescription  }}
             </p>
           </div>
 
           <div class="list-inline">
-            <img src="../../assets/icons/timer.svg" class="list-inline-item" />
+            <!-- <img src="../../assets/icons/timer.svg" class="list-inline-item" /> -->
             <p class="card-text list-inline-item">
               <!-- <b>2</b> Jours <b>6</b> Heures <b>5 </b>minutes restants -->
-              project.projectLefttime restants
+               
             </p>
           </div>
 
@@ -64,24 +57,23 @@
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
-              Partager sur les reseaux sociaux
-            </button>
+            Share on social networks            </button>
 
             <button
-              class="btn btn-primary"
+              class="btn btn-secondary"
               type="button"
               routerLinkActive="router-link-active"
+              [routerLink]="['/project/', project._id]"
             >
-              Voir Details et Soutenir
-            </button>
-
+make a vote            </button>
+<!-- 
             <button
               class="btn btn-info"
               type="button"
               routerLinkActive="router-link-active"
             >
               Voir Details et Realisation
-            </button>
+            </button> -->
           </div>
           <!-- </div> -->
           <!-- </div>
@@ -92,9 +84,13 @@
       <div class="col-2">
         <br />
         <br />
+        <a [routerLink]="['/login']">
         <i class="fa-solid fa-4x fa-thumbs-up"></i> <br />
+      </a>
         <br /><br /><br />
-        <i class="fa-solid fa-4x fa-thumbs-down"></i>
+        <a  >
+
+        <i class="fa-solid fa-4x fa-thumbs-down"></i></a>
       </div>
     </div>
   </div>
@@ -113,8 +109,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">
-          Partager sur les reseaux sociaux
-        </h5>
+          Share on social networks        </h5>
         <button
           type="button"
           class="btn-close"
@@ -141,3 +136,4 @@
     </div>
   </div>
 </div>
+<app-footer></app-footer>

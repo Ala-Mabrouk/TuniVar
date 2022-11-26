@@ -13,7 +13,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
       <img
-        src="../../assets/logo.png"
+        src="../../assets/logo_f_2.png"
         class="d-inline-block align-text-top ms-5"
         width="150px"
       />
@@ -26,40 +26,34 @@
               class="nav-link active"
               aria-current="page"
               routerLinkActive="router-link-active"
+              [routerLink]="['/']"
+
               >Accueil</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="router-link-active"
-              >Projets</a
+            <a class="nav-link" routerLinkActive="router-link-active"               [routerLink]="['/projects']"
+
+              >Projects</a
             >
           </li>
-          <li class="nav-item" *ngIf="isIn">
+          <li class="nav-item" >
             <a
               class="nav-link"
-              [routerLink]="['/myproject']"
+              [routerLink]="['/finished']"
               routerLinkActive="router-link-active"
-              >Mes projets</a
+              >finished projects</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contactez-Nous</a>
+            <a class="nav-link" href="#">Contact</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">A propos</a>
-          </li>
-          <li class="nav-item" *ngIf="!isIn">
-            <!-- <a class="nav-link" [routerLink]="['/login/ ']"> -->
-            <a class="nav-link">
-              <button type="button" class="btn btn-primary btn-sm">
-                se Connecter
-              </button></a
-            >
-          </li>
-          <li class="nav-item" *ngIf="isIn">
-            <a class="nav-link" (click)="disconnect()"
-              ><button type="button" class="btn btn-primary btn-sm">
-                se Deconnecter
+            <a class="nav-link" 
+              ><button type="button" class="btn btn-primary btn-sm"               [routerLink]="['/login']"
+              >
+                <i class="fa-solid fa-user"></i>
               </button></a
             >
           </li>

@@ -11,8 +11,8 @@ function generateCryptedPass(plainPass) {
   const hash = cryptPass.hashSync(plainPass, 5);
   return hash;
 }
-function verifPass(plainPass, hashedPass) {
-  return cryptPass.compareSync(plainPass, hashedPass);
+function verifPass(plainPass, hashedPass) { 
+  return cryptPass.compareSync(plainPass, hashedPass); 
 }
 
 const userSignUp = (req, res) => {
@@ -21,18 +21,18 @@ const userSignUp = (req, res) => {
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     var dbo = db.db("TuniMocracysDB");
-    var query = { numUniqueWeb: newUser.numUniqueWeb };
-    dbo.collection("users").find({ query }, function (err, result) {
+    var query = { numUniqueWeb: newUser.userUniqueNum };
+    dbo.collection("users").find({ query }).toArray( function (err, result) {
       if (err) throw err;
-      if (result != null) {
+      if (result[0] != null) {
         return res.status(400).json("user already exist !");
       }
     });
     //checking the web num
-    query={uniqueId:newUser.numUniqueWeb}
-    dbo.collection("usersWebNum").find({ query }, function (err, result) {
+    query={uniqueId:newUser.userUniqueNum}
+    dbo.collection("usersWebNum").find({ query }).toArray( function (err, result) {
         if (err) throw err;
-        if (result == null|| result.phoneNumber!=newUser.userPhone) {
+        if (result[0] == null|| result[0].userPhone!=newUser.userPhone) {
             return res.status(400).json("num web invalid or doesn't match info  ! ");
         }
       });
@@ -43,67 +43,61 @@ const userSignUp = (req, res) => {
       if (err) throw err;
       console.log("1 document inserted");
       db.close();
-      return res.status(500).json(err);
+      
     });
+   // return res.status(500).json(err);
   });
 };
 
 const userLogin = (req, res) => {
   const logedUser = req.body;
   var query = { userEmail: logedUser.userEmail };
+ 
+
   MongoClient.connect(url, function (err, db) {
-  dbo.collection("users").find({ query }, function (err, result) {
+    var dbo = db.db("TuniMocracysDB");
+  dbo.collection("users").find({ query }).toArray(function (err, result) {
     if (err) throw err;
-    if (result != null) {
-       if( verifPass(logedUser.userPassword,result.userPassword)){
-        return res.status(200).json({ token: "accessToken" });
-       }else{
-        return res.status(401).json("check your credentinals");
-       }
-      
+    if (result != null) {  
+        return res.status(200).json("{ token: "+result.toString()+" }");
     }else{
         return res.status(401).json("check your credentinals");
     }
   });})
 
 
-
-
-
-
-//   let query =
-//     "select u.userEmail,u.userPassword from users u where u.userEmail=?";
-
-//   connction.query(query, [logedUser.email], (err, resultQuery) => {
-//     if (!err) {
-//       if (resultQuery.length <= 0) {
-//         return res.status(401).json("check your credentinals");
-//       } else if (verifPass(logedUser.password, resultQuery[0].userPassword)) {
-//         const response = { email: resultQuery[0].userEmail };
-//         const accessToken = jwt.sign(response, process.env.ACCESS_TOKEN, {
-//           expiresIn: "8h",
-//         });
-//         res.status(200).json({ token: accessToken });
-//       } else {
-//         return res.status(401).json("check your credentinals");
-//       }
-//     } else {
-//       return res.status(500).json(err);
-//     }
-//   });
 };
+const userVote=(req,res)=>{
 
-const userInfo = async (req, res) => {
-  const userToken = req.params.token;
-  userEmail = authServices.getMailFromToken(userToken);
+  const resWeb=req.body // have user id- projectid-datevote-repVote
+  var myquery={userId:resWeb.idUser}
+  MongoClient.connect(url, function (err, db) {
+    var dbo = db.db("TuniMocracysDB");
 
-  let queryUser = "select u.* from users u where u.userEmail=?";
-  resRech = await query(queryUser, [userEmail]);
+    dbo.collection("users").find({ myquery }, function (err, result) {
+      if (err) throw err;
+      if (result != null) {
+         dbo.collection("users").updateOne({myquery},{$push:{"votes":{project:resWeb.idProject,dateVote:resWeb.voteDate,repVote:resWeb.repUser}}})
+        
+      }else{
+          return res.status(401).json("problem occured ");
+      }
+      return res.status(200).json("vote saved");
 
-  if (resRech != null) return res.status(200).json(resRech);
+    });})
+}
 
-  return res.status(500).json("user not found");
-};
+// const userInfo = async (req, res) => {
+//   const userToken = req.params.token;
+//   userEmail = authServices.getMailFromToken(userToken);
+
+//   let queryUser = "select u.* from users u where u.userEmail=?";
+//   resRech = await query(queryUser, [userEmail]);
+
+//   if (resRech != null) return res.status(200).json(resRech);
+
+//   return res.status(500).json("user not found");
+// };
 const userToken = (req, res) => {
   let tres = authServices.validateToken(req);
   if (tres) {
@@ -131,7 +125,6 @@ const userInfoById = async (req, res) => {
 module.exports = {
   userSignUp,
   userLogin,
-  userInfo,
-  userToken,
+   userToken,
   userInfoById,
 };

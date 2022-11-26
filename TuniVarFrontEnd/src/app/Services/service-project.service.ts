@@ -5,12 +5,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ServiceProjectService {
-  private url = 'http://localhost:2400/project/';
+   private url = 'http://localhost:2400/project/';
   constructor(private httpClient: HttpClient) { }
 
 
   getAllProject() {
     return this.httpClient.get(this.url + 'allProjects');
+  }
+  getProjectDetails(idP:String){
+    return this.httpClient.get(this.url+"getProjectDetails/"+idP);
   }
 
 

@@ -1,0 +1,121 @@
+<nav class="navbar navbar-expand-lg navbar-dark"  style="background-color:#253131;">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+     <a href=""><img
+      src="../../assets/logo_f_2.png"
+      class="d-inline-block align-text-top ms-5"
+      width="150px"
+    /></a> 
+
+  
+    </div>
+  </div>
+</nav>
+
+<div class="mb-3"></div>
+
+<div [class]="infoClass" id="container">
+  <div class="form-container sign-up-container">
+    <form [formGroup]="signUPform">
+      <h3>Create an acount</h3>
+      <!-- <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span>or use your email for registration</span> -->
+      <input type="text" placeholder="Nom" formControlName="firstName" />
+      <input type="text" placeholder="prenom" formControlName="lastName" />
+      <input type="date" placeholder="**/**/****" formControlName="birthDate" />
+      <input type="email" placeholder="Email" formControlName="email" />
+      <input type="tel" placeholder="telephone" formControlName="phone" />
+  
+      <input
+        type="password"
+        placeholder="Mot de passe"
+        formControlName="password"
+      />
+ 
+          <h1 class="ms-5 modal-title fs-5 text-center" id="exampleModalLabel">enter the code received on </h1>
+          <img src="../../assets/e-houwiya-mobile-id-tunisie.jpg" alt="" width="100px">
+         
+         
+     
+          
+          <input type="text" placeholder="numero unique " formControlName="uniqueNum" />
+     
+    
+   
+      <button class="btn btn-primary" (click)="sigup()"  >Sign Up</button>
+    </form>
+  </div>
+  <div class="form-container sign-in-container">
+    <form [formGroup]="logINform">
+      <h1>Log in</h1>
+      <!-- <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span>Ou bien utilisez votre compte</span> -->
+      <input type="email" placeholder="Email" formControlName="email" />
+      <input
+        type="password"
+        placeholder="Mot de passe"
+        formControlName="password"
+      />
+      <a href="#">Forgot your password ?</a>
+      <button class="btn btn-primary" (click)="login()">Log in</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Bienvenue !</h1>
+        <p>have you an  account ?</p>
+        <button class="btn btn-secondary" id="signIn" (click)="moveSignIn()">
+login         </button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Welcome !</h1>
+        <p>Do not have an account yet ? Create one!</p>
+        <button class="btn btn-secondary" id="signUp" (click)="moveSignUp()">
+          sign up
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h1 class="ms-5 modal-title fs-5 text-center" id="exampleModalLabel">saisir le code réçu sur </h1>
+        <img src="../../assets/e-houwiya-mobile-id-tunisie.jpg" alt="" width="100px">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <input type="text" placeholder="numero unique " formControlName="uniqueNum" />
+   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="sigup()">submit</button>
+      </div>
+    </div>
+  </div>
+</div> -->
