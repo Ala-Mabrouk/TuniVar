@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-
+<div *ngFor="let project of listAllProject">
   <div class="card mt-5">
     <div class="row">
       <div class="col-4">
@@ -37,7 +37,7 @@
           </div> -->
         <div class="card-body">
           <h5 class="card-title">project.projectShortName</h5>
-          <p class="card-text"></p>
+          <p class="card-text">{{project.projectName}}</p>
 
           <div class="list-inline">
             <img src="../../assets/icons/donate.svg" class="list-inline-item" />
@@ -98,6 +98,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <!-- Modal -->

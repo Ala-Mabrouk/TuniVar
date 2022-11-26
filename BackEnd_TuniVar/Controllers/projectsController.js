@@ -4,8 +4,8 @@ var url = "mongodb://localhost:27017/";
 const connectionDb = require("../connectionDb");
 const jwt = require("jsonwebtoken");
 const util = require("util");
-const query = util.promisify(connectionDb.query).bind(connectionDb);
-const Project = require("../Models/Project");
+//const query = util.promisify(connectionDb.query).bind(connectionDb);
+//const Project = require("../Models/Project");
 var mailtemp;
 
 function getMailFromToken(req) {

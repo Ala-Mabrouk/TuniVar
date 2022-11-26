@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { TestComponent } from './test/test.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectComponent } from './project/project.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ProjectComponent } from './project/project.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
 
   ],
   providers: [],
